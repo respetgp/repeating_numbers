@@ -7,13 +7,13 @@ def max_repeating_funktion(string_symbol):
     Выводит числа, которые повторяются максимальное количество раз.
     Вывод нужен в порядке убывания.
     """
-    string_symbol = re.sub("[^-0-9]", " ", string_symbol)
-    string_symbol = string_symbol.split()   # составление словаря только из чисел
-    string_symbol_part_time = {i: string_symbol.count(i) for i in string_symbol}    # сортировка по количеству повторений
-    max_value = max(string_symbol_part_time.values())
-    final_dict = {k: v for k, v in string_symbol_part_time.items() if v == max_value}   # выбор максимальных значений
-    string_symbol_part_time = str(" ".join(final_dict.keys()))
-    return string_symbol_part_time
+    string_symbols = re.sub("[^-0-9]", " ", string_symbol)
+    string_symbols = string_symbols.split()   # составление словаря только из чисел
+    string_symbols_part_time = {i: string_symbols.count(i) for i in string_symbols}    # сортировка по количеству повторений
+    max_value = max(string_symbols_part_time.values())
+    final_dict = {k: v for k, v in string_symbols_part_time.items() if v == max_value}   # выбор максимальных значений
+    string_symbols_part_time = str(" ".join(final_dict.keys()))
+    return string_symbols_part_time
 
 
 assert max_repeating_funktion('[1, 2, 3, [5, 5], 6, [7, 8, 9, [10, 11]]]') == '5'
